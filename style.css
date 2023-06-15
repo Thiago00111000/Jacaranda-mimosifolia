@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+   background-color:#358BA6;
+   color:#fdffff;
+}
+
+.banner{
+    display:inline;
+    justify-content:baseline;
+    width: 100%;
+}
+
+.cabeçalho{
+    text-align: center;
+    padding: 0;
+}
+.body{
+    font-family: 'Noto Serif', serif;
+ }
+
+.banner{
+    display:inline;
+    justify-content:baseline;
+    width: 100%;
+}
+
+.topicos{
+    color:#fdffff;
+    padding: 0 16px;
+    display:inline-block;
+    font-size: 30px;
+}
+
+.arquivo{
+    margin: 0 16px;
+    padding: 20px 0;
+    justify-content:center;
+    display:flexbox;
+    font-size: 25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+ }
+
+ .diva{
+    text-align: center;
+ }
+
+.bookshelf{
+    text-align: center;
+    padding: 50px 0px;
+    text-shadow: #6b7c81;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+ .livros{
+    padding: 0px 20px;
+    size: 500px ;
+ }
+
