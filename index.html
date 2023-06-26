@@ -4,29 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heureca-Menu</title>
+    <title>Heureca-Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="C:\Users\thiag\OneDrive\Área de Trabalho\Oldton\images">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="cabeçalho">
-        <img class="banner" src="Desktop - 1.png" alt="error_404">
+     <header class="cabeçalho">
+        <img class="banner" src="Desktop - 1.png" alt="Error_404">
         <a href="https://thiago00111000.github.io/Hymenaea-courbaril/"><l1 class="topicos">  Menu ></l1></a>
         <a href="https://thiago00111000.github.io/Quercus-alba/"><l1 class="topicos">  Categorias ></l1></a>
         <l1 class="topicos">  Meu Acervo ></l1>
+        <a href="#"><l1 class="topicos"> Simulação ></l1></a>
         <a href="https://thiago00111000.github.io/Pinus-sylvestris/"><l1 class="topicos">  Sobre ></l1></a>
     </header>
+    <section class="yes">
+        <canvas id="canvas" width="1000" height="800"></canvas>
+        <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
 
-    <section class="arquivo">
-        <div class="diva"><h1></h1></div>
-    </section>
+            var sun = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: 50,
+            color: "yellow"
+            };
 
-    <section class="estante">
-       
-        </div>
+            var planet = {
+            x: sun.x + 200,
+            y: sun.y,
+            radius: 20,
+            color: "blue",
+            angle: 0,
+            speed: 0.01
+            };
+
+            function drawSun() {
+            ctx.beginPath();
+            ctx.arc(sun.x, sun.y, sun.radius, 0, Math.PI * 2);
+            ctx.fillStyle = sun.color;
+            ctx.fill();
+            ctx.closePath();
+            }
+
+            function drawPlanet() {
+            ctx.beginPath();
+            ctx.arc(planet.x, planet.y, planet.radius, 0, Math.PI * 2);
+            ctx.fillStyle = planet.color;
+            ctx.fill();
+            ctx.closePath();
+            }
+
+            function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawSun();
+            drawPlanet();
+
+            planet.x = sun.x + Math.cos(planet.angle) * 200;
+            planet.y = sun.y + Math.sin(planet.angle) * 200;
+            planet.angle += planet.speed;
+
+            requestAnimationFrame(update);
+            }
+
+            update();
+        </script>
     </section>
 </body>
 </html>
+
